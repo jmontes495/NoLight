@@ -9,7 +9,7 @@ public class TurningLights : MonoBehaviour
     void Update()
     {
         if (currentLight != null && Input.GetKeyDown(KeyCode.Space))
-            currentLight.switchLight();
+            currentLight.SwitchLight();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
