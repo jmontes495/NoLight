@@ -9,12 +9,15 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     private float movementDelay;
 
-    private Transform myTransform;    
+    private Transform myTransform;
+
+    private Rigidbody2D rb;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         myTransform = transform;
+        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(Walking());
     }
 
@@ -44,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
             else if (moveVertical < 0)
                 movement.y = -tileDistance;
 
-            myTransform.position += movement;
+            rb.MovePosition(movement + transform.position);
 
             yield return delay;
         }
