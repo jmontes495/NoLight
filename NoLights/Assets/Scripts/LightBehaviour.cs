@@ -23,6 +23,9 @@ public class LightBehaviour : MonoBehaviour
 
     private void NotifyLightState()
     {
+        if (LightOn == null || LightOff == null)
+            Debug.LogWarning("D:");
+
         if (light.enabled)
             LightOn();
         else

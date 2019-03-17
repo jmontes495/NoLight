@@ -23,10 +23,12 @@ public class LightsManager : MonoBehaviour
     private void CountLightsUp()
     {
         lightsCount++;
+        Debug.LogError(lightsCount);
     }
 
     private void CountLightsDown()
     {
         lightsCount--;
+        Debug.LogError(lightsCount);
     }
 }
