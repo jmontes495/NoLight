@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LightsManager : MonoBehaviour
 {
+    public delegate void LightManagerEvent();
+    public static event LightManagerEvent AllLightsOut;
+    public static event LightManagerEvent TurnedBackOneLight;
 
     private int lightsCount;
 
@@ -23,12 +26,14 @@ public class LightsManager : MonoBehaviour
     private void CountLightsUp()
     {
         lightsCount++;
-        Debug.LogError(lightsCount);
+        if (lightsCount == 1)
+            TurnedBackOneLight();
     }
 
     private void CountLightsDown()
     {
         lightsCount--;
-        Debug.LogError(lightsCount);
+        if (lightsCount == 0)
+            AllLightsOut();
     }
 }
