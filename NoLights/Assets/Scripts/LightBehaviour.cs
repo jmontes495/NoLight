@@ -8,16 +8,21 @@ public class LightBehaviour : MonoBehaviour
     public static event LightEvent LightOn;
     public static event LightEvent LightOff;
 
+    [SerializeField]
+    private SpriteRenderer torchOn;
+
     private Light light;
     // Start is called before the first frame update
     void Start()
     {
         light = GetComponent<Light>();
+        torchOn.enabled = light.enabled;
     }
 
     public void SwitchLight()
     {
         light.enabled = !light.enabled;
+        torchOn.enabled = light.enabled;
         NotifyLightState();
     }
 
