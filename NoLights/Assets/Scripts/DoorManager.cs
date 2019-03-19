@@ -31,6 +31,7 @@ public class DoorManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
+        Debug.Log("Collide");
         /*
          * Here should be a verification that ask wheter or not all lights are off
          * if so, the next question is asked, else the game does nothing.
@@ -46,11 +47,13 @@ public class DoorManager : MonoBehaviour
 
     private void doorProgressCanHappen()
     {
+        Debug.Log("Luces apagadas");
         allLightsOut = true;
     }
 
     private void doorProgressIsSuspended()
     {
+        Debug.Log("Luces prendidas");
         allLightsOut = false;
     }
 
@@ -61,15 +64,18 @@ public class DoorManager : MonoBehaviour
     {
         if(currentStatus==0)
         {
+            Debug.Log("status primero");
             firstRupture.SetActive(true);
         }
         else if(currentStatus==1)
         {
+            Debug.Log("status segundo");
             firstRupture.SetActive(false);
             advancedRupture.SetActive(true);
         }
         else if(currentStatus==2)
         {
+            Debug.Log("status tercero");
             firstRupture.SetActive(false);
             doorSprite.SetActive(false);
         }
