@@ -14,16 +14,19 @@ public class DoorManager : MonoBehaviour
     public GameObject firstRupture; // First state in wich the the fungus roots start appearing
     public GameObject advancedRupture; // More longer fungus roots covering the door
     public GameObject doorSprite; // The door 
+    private bool allLightsOut = false;
 
+
+    private void Start()
+    {
+        LightsManager.AllLightsOut += doorProgressCanHappen;
+        LightsManager.TurnedBackOneLight += doorProgressIsSuspended;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown("space"))
-        {
-            changeDoorStatus();
-            print("Current Status: " + currentStatus);
-        }*/
+        
     }
 
     private void OnTriggerEnter2D(Collider2D triggerCollider)
@@ -32,11 +35,23 @@ public class DoorManager : MonoBehaviour
          * Here should be a verification that ask wheter or not all lights are off
          * if so, the next question is asked, else the game does nothing.
          */ 
-
-        if(triggerCollider.tag == "DoorProgresion")
+         if(allLightsOut)
         {
-            changeDoorStatus(triggerCollider.gameObject);
+            if (triggerCollider.tag == "DoorProgresion")
+            {
+                changeDoorStatus(triggerCollider.gameObject);
+            }
         }
+    }
+
+    private void doorProgressCanHappen()
+    {
+        allLightsOut = true;
+    }
+
+    private void doorProgressIsSuspended()
+    {
+        allLightsOut = false;
     }
 
     /// <summary>
