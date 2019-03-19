@@ -4,49 +4,61 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    /**
+    /*
      * 0 = Puerta normal
      * 1 = Ya hay raices
      * 2 = Puerta muchas raices
      * 3 = Puerta esta rota
      */
     private int currentStatus = 0;
-    public GameObject puertaInicial;
-    public GameObject puertaIntermedia;
-    public GameObject PuertaMuchasRaices;
+    public GameObject firstRupture; // First state in wich the the fungus roots start appearing
+    public GameObject advancedRupture; // More longer fungus roots covering the door
+    public GameObject doorSprite; // The door 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        /*if (Input.GetKeyDown("space"))
         {
             changeDoorStatus();
             print("Current Status: " + currentStatus);
+        }*/
+    }
+
+    private void OnTriggerEnter2D(Collider2D triggerCollider)
+    {
+        /*
+         * Here should be a verification that ask wheter or not all lights are off
+         * if so, the next question is asked, else the game does nothing.
+         */ 
+
+        if(triggerCollider.tag == "DoorProgresion")
+        {
+            changeDoorStatus(triggerCollider.gameObject);
         }
     }
 
-    private void changeDoorStatus()
+    /// <summary>
+    /// Changes the srpites that indicates the status of the door as well as changes the int that helps to identify the current status of the door
+    /// </summary>
+    private void changeDoorStatus(GameObject triggerColliderGO)
     {
         if(currentStatus==0)
         {
-            puertaInicial.SetActive(false);
-            currentStatus++;
+            firstRupture.SetActive(true);
         }
         else if(currentStatus==1)
         {
-            puertaIntermedia.SetActive(false);
-            currentStatus++;
+            firstRupture.SetActive(false);
+            advancedRupture.SetActive(true);
         }
         else if(currentStatus==2)
         {
-            PuertaMuchasRaices.SetActive(false);
-            currentStatus++;
+            firstRupture.SetActive(false);
+            doorSprite.SetActive(false);
         }
+        triggerColliderGO.SetActive(false);
+        currentStatus++;
     }
 }
