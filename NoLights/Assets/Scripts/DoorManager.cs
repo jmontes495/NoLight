@@ -13,6 +13,7 @@ public class DoorManager : MonoBehaviour
     private int currentStatus = 0;
     public GameObject firstRupture; // First state in wich the the fungus roots start appearing
     public GameObject advancedRupture; // More longer fungus roots covering the door
+    public GameObject brokenDoor;
     public GameObject doorSprite; // The door 
     private bool allLightsOut = false;
 
@@ -65,6 +66,7 @@ public class DoorManager : MonoBehaviour
         if(currentStatus==0)
         {
             Debug.Log("status primero");
+            doorSprite.SetActive(false);
             firstRupture.SetActive(true);
         }
         else if(currentStatus==1)
@@ -77,7 +79,7 @@ public class DoorManager : MonoBehaviour
         {
             Debug.Log("status tercero");
             advancedRupture.SetActive(false);
-            doorSprite.SetActive(false);
+            brokenDoor.SetActive(true);
         }
         triggerColliderGO.SetActive(false);
         currentStatus++;
