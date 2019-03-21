@@ -76,7 +76,7 @@ public class DoorManager : MonoBehaviour
         else if(currentStatus==2)
         {
             Debug.Log("status tercero");
-            firstRupture.SetActive(false);
+            advancedRupture.SetActive(false);
             doorSprite.SetActive(false);
         }
         triggerColliderGO.SetActive(false);
