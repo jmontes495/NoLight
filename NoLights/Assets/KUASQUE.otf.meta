@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd94f04a29253cb43ad64ec3aab1ede8
+guid: 6202328bd8996354a807644db319ee83
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Naomis Hand
+  fontName: KUASQUE
   fontNames:
-  - Naomis Hand
+  - KUASQUE
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

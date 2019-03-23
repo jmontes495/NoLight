@@ -28,7 +28,7 @@ public class MushroomBehaviour : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        yield return new WaitForSeconds(Random.Range(0, 1));
+        yield return new WaitForSeconds(Random.Range(0, 5));
         for (float i = 0f; i < 1; i += 0.01f)
         {
             sr.color = new Color(1f, 1f, 1f, i);
