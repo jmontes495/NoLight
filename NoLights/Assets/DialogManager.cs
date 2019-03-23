@@ -71,13 +71,13 @@ public class DialogManager : MonoBehaviour
         {
             for (float i = 1f; i > 0.7f; i -= 0.01f)
             {
-                dialog.color = new Color(1f, 1f, 1f, i);
+                dialog.color = new Color(0f, 1f, 1f, i);
                 yield return new WaitForSeconds(0.05f);
             }
 
             for (float i = 0.7f; i < 1; i += 0.01f)
             {
-                dialog.color = new Color(1f, 1f, 1f, i);
+                dialog.color = new Color(0f, 1f, 1f, i);
                 yield return new WaitForSeconds(0.05f);
             }
         }
