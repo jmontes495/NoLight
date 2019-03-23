@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7771d54df8a06134789e7cf8acde5d6c
+guid: cd94f04a29253cb43ad64ec3aab1ede8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: MICHAEL Jackpot
+  fontName: Naomis Hand
   fontNames:
-  - MICHAEL Jackpot
+  - Naomis Hand
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
