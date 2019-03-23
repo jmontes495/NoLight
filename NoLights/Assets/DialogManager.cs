@@ -30,7 +30,9 @@ public class DialogManager : MonoBehaviour
 
     private void ShowFinalDialog()
     {
+        StopAllCoroutines();
         dialog.text = finalText;
+        dialog.color = new Color(0f, 1f, 1f, 0f);
         LightsManager.AllLightsOut -= ShowFinalDialog;
         StartCoroutine(FadeInAndGlow());
     }
