@@ -16,8 +16,6 @@ public class CharacterAnimationController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Debug.LogError(moveHorizontal);
-
         animator.SetInteger("Vertical", (int) moveVertical*10);
         animator.SetInteger("Horizontal", (int) moveHorizontal*10);
 
