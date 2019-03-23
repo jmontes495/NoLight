@@ -19,12 +19,18 @@ public class PlayerMovement : MonoBehaviour {
         myTransform = transform;
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(Walking());
+        FinalTransition.GameEnded += StopWalking;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void StopWalking()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator Walking()

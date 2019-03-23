@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class DialogManager : MonoBehaviour
     private string finalText;
 
     private TextMeshProUGUI dialog;
+
+    private Image background;
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class DialogManager : MonoBehaviour
 
         dialog = GetComponent<TextMeshProUGUI>();
         dialog.color = new Color(1f, 1f, 1f, 0f);
+
+        background = GetComponentInChildren<Image>();
         StartCoroutine(FadeIn());
     }
 
@@ -34,6 +39,7 @@ public class DialogManager : MonoBehaviour
         dialog.text = finalText;
         dialog.color = new Color(0f, 1f, 1f, 0f);
         LightsManager.AllLightsOut -= ShowFinalDialog;
+        StopAllCoroutines();
         StartCoroutine(FadeInAndGlow());
     }
 
@@ -42,6 +48,8 @@ public class DialogManager : MonoBehaviour
         for (float i = 1f; i > 0; i -= 0.01f)
         {
             dialog.color = new Color(1f, 1f, 1f, i);
+            if(i <= 0.8f)
+                background.color = new Color(0f, 0f, 0f, i);
             yield return new WaitForSeconds(0.02f);
         }
     }
@@ -52,6 +60,8 @@ public class DialogManager : MonoBehaviour
         for (float i = 0f; i < 1; i += 0.01f)
         {
             dialog.color = new Color(1f, 1f, 1f, i);
+            if (i <= 0.8f)
+                background.color = new Color(0f, 0f, 0f, i);
             yield return new WaitForSeconds(0.05f);
         }
     }
@@ -62,6 +72,8 @@ public class DialogManager : MonoBehaviour
         for (float i = 0f; i < 1; i += 0.01f)
         {
             dialog.color = new Color(0f, 1f, 1f, i);
+            if (i <= 0.8f)
+                background.color = new Color(0f, 0f, 0f, i);
             yield return new WaitForSeconds(0.05f);
         }
         StartCoroutine(Glow());

@@ -21,6 +21,7 @@ public class LightsManager : MonoBehaviour
             if (light.enabled)
                 lightsCount++;
         }
+        lightsCount -= 1; //Characters light
     }
 
     private void CountLightsUp()

@@ -11,27 +11,35 @@ public class LightBehaviour : MonoBehaviour
     [SerializeField]
     private SpriteRenderer torchOn;
 
-    private Light light;
+    private Light torchLight;
+
+    private bool canActivate = true;
     // Start is called before the first frame update
     void Start()
     {
-        light = GetComponent<Light>();
-        torchOn.enabled = light.enabled;
+        torchLight = GetComponent<Light>();
+        torchOn.enabled = torchLight.enabled;
+        LightsManager.AllLightsOut += EndLightSwitching;
+    }
+
+    private void EndLightSwitching()
+    {
+        canActivate = false;
     }
 
     public void SwitchLight()
     {
-        light.enabled = !light.enabled;
-        torchOn.enabled = light.enabled;
+        if (!canActivate)
+            return;
+
+        torchLight.enabled = !torchLight.enabled;
+        torchOn.enabled = torchLight.enabled;
         NotifyLightState();
     }
 
     private void NotifyLightState()
     {
-        if (LightOn == null || LightOff == null)
-            Debug.LogWarning("D:");
-
-        if (light.enabled)
+        if (torchLight.enabled)
             LightOn();
         else
             LightOff();
