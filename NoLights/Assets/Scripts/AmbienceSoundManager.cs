@@ -21,5 +21,6 @@ public class AmbienceSoundManager : MonoBehaviour
     {
         sAudioSource.clip = sPeaceSound;
         sAudioSource.Play();
+        sAudioSource.volume = 0.170f;
     }
 }
