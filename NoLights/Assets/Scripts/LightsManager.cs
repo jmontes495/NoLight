@@ -35,6 +35,9 @@ public class LightsManager : MonoBehaviour
     {
         lightsCount--;
         if (lightsCount == 0)
+        { 
             AllLightsOut();
+            AmbienceSoundManager.changeAmbienceSounds();
+        }
     }
 }
