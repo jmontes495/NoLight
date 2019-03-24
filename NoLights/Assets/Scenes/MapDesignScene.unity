@@ -10500,7 +10500,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!114 &449139901
 MonoBehaviour:
@@ -10949,7 +10949,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!114 &506403894
 MonoBehaviour:
@@ -19766,7 +19766,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!114 &1240772204
 MonoBehaviour:
@@ -22209,12 +22209,12 @@ PrefabInstance:
     - target: {fileID: 7144730071641387755, guid: b9d797774e378914f9605e857ddeedc5,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7144730071641387755, guid: b9d797774e378914f9605e857ddeedc5,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1165125863, guid: b9d797774e378914f9605e857ddeedc5, type: 3}
       propertyPath: firstRupture
