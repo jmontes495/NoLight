@@ -25008,10 +25008,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3133985254359701593}
   - component: {fileID: 3133985254359701594}
-  - component: {fileID: 3133985254359701595}
   - component: {fileID: 532596623}
   - component: {fileID: 532596626}
   - component: {fileID: 3133985254359701596}
+  - component: {fileID: 3133985254359701595}
   m_Layer: 5
   m_Name: Door
   m_TagString: Untagged
@@ -25093,11 +25093,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3133985254359701592}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bcb386159287ce4eb40868d8a3a9220, type: 3}
+  m_Script: {fileID: 11500000, guid: 0451a3845792a4c4784f224e73da49f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 3133985254359701596}
+  normalBreakSound: {fileID: 8300000, guid: 75fb9580bb1850845a52889138e84bf2, type: 3}
+  finalBreakSound: {fileID: 8300000, guid: 011ea0e23de4a5246807e9ae8dd16e09, type: 3}
 --- !u!82 &3133985254359701596
 AudioSource:
   m_ObjectHideFlags: 0

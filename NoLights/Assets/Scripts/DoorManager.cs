@@ -44,17 +44,7 @@ public class DoorManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D triggerCollider)
     {
         Debug.Log("Collide");
-        /*
-         * Here should be a verification that ask wheter or not all lights are off
-         * if so, the next question is asked, else the game does nothing.
-         
-         if(allLightsOut)
-        {
-            if (triggerCollider.tag == "DoorProgresion")
-            {
-                changeDoorStatus(triggerCollider.gameObject);
-            }
-        }*/
+        
     }
 
     private void doorProgressCanHappen()
@@ -96,6 +86,8 @@ public class DoorManager : MonoBehaviour
             }
             triggerColliderGO.SetActive(false);
             currentStatus++;
+
+            DoorSoundsManager.playDoorSounds(currentStatus);
         }
     }
 }
