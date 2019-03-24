@@ -11285,6 +11285,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9028272d648d948899a5c21f998ccd, type: 3}
+--- !u!1 &532596622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3133985253860960376, guid: bd9028272d648d948899a5c21f998ccd,
+    type: 3}
+  m_PrefabInstance: {fileID: 584970272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &532596623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532596622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c07dbcd674531c48acc352ac75b543a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstStateSprite: {fileID: 21300000, guid: fd2c3b4935eda7443820108bc03de455, type: 3}
+  SecondStateSprite: {fileID: 21300000, guid: 33d2314e691904544be200726c18a974, type: 3}
+  finalStateSprite: {fileID: 21300000, guid: bfe6daf6ce98bf649a8a4c2eb3d18694, type: 3}
+  SR: {fileID: 532596625}
+--- !u!212 &532596625 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3133985253860960378, guid: bd9028272d648d948899a5c21f998ccd,
+    type: 3}
+  m_PrefabInstance: {fileID: 584970272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &537247681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11736,7 +11764,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bfe6daf6ce98bf649a8a4c2eb3d18694,
+      objectReference: {fileID: 21300000, guid: d7231718bbcaa3f44a210271df69edf0,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9028272d648d948899a5c21f998ccd, type: 3}
@@ -11921,6 +11949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657334462}
   - component: {fileID: 657334463}
+  - component: {fileID: 657334464}
   m_Layer: 0
   m_Name: FinalState
   m_TagString: DoorProgresion
@@ -11936,7 +11965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657334461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.16, y: 0.5799999, z: 0}
+  m_LocalPosition: {x: -2.92, y: 0.5799999, z: 0}
   m_LocalScale: {x: 0.43750998, y: 2.3125, z: 1}
   m_Children: []
   m_Father: {fileID: 2072866846}
@@ -11968,6 +11997,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &657334464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657334461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4cf83d27b213c4f964361e17bb6fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &665330003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18285,6 +18326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896267733}
   - component: {fileID: 896267734}
+  - component: {fileID: 896267735}
   m_Layer: 0
   m_Name: SecondState
   m_TagString: DoorProgresion
@@ -18300,7 +18342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896267732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.17, y: 0.5799999, z: 0}
+  m_LocalPosition: {x: -0.86, y: 0.5799999, z: 0}
   m_LocalScale: {x: 0.43750998, y: 2.3125, z: 1}
   m_Children: []
   m_Father: {fileID: 2072866846}
@@ -18332,6 +18374,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &896267735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896267732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4cf83d27b213c4f964361e17bb6fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &916225939 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3133985253860960377, guid: bd9028272d648d948899a5c21f998ccd,
@@ -22041,6 +22095,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5827643628818041161, guid: b9d797774e378914f9605e857ddeedc5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5827643628818041160, guid: b9d797774e378914f9605e857ddeedc5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22172,6 +22231,10 @@ PrefabInstance:
       propertyPath: doorSprite
       value: 
       objectReference: {fileID: 139053986}
+    - target: {fileID: 1165125863, guid: b9d797774e378914f9605e857ddeedc5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3535976782310911341, guid: b9d797774e378914f9605e857ddeedc5,
         type: 3}
       propertyPath: m_IsActive
@@ -23938,6 +24001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1940240419}
   - component: {fileID: 1940240420}
+  - component: {fileID: 1940240421}
   m_Layer: 0
   m_Name: FirstState
   m_TagString: DoorProgresion
@@ -23953,7 +24017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940240418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.18, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0.98, y: 0.58, z: 0}
   m_LocalScale: {x: 0.43751, y: 2.3125, z: 1}
   m_Children: []
   m_Father: {fileID: 2072866846}
@@ -23985,6 +24049,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1940240421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940240418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4cf83d27b213c4f964361e17bb6fae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1948970963
 PrefabInstance:
   m_ObjectHideFlags: 0

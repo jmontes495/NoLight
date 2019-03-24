@@ -10,16 +10,27 @@ public class DoorManager : MonoBehaviour
      * 2 = Puerta muchas raices
      * 3 = Puerta esta rota
      */
-    private int currentStatus = 0;
-    public GameObject firstRupture; // First state in wich the the fungus roots start appearing
-    public GameObject advancedRupture; // More longer fungus roots covering the door
-    public GameObject brokenDoor;
-    public GameObject doorSprite; // The door 
-    private bool allLightsOut = false;
+    private static int currentStatus = 0;
 
+    public Sprite firstStateSprite;
+    public Sprite SecondStateSprite;
+    public Sprite finalStateSprite;
+    public SpriteRenderer SR;
+
+    public static Sprite firstSatateStatic; // First state in wich the the fungus roots start appearing
+    public static Sprite secondSatateStatic; // More longer fungus roots covering the door
+    public static Sprite finalStateStatic;
+    private static bool allLightsOut = false;
+
+    public static SpriteRenderer SR_Static;
 
     private void Start()
     {
+        firstSatateStatic = firstStateSprite;
+        secondSatateStatic = SecondStateSprite;
+        finalStateStatic = finalStateSprite;
+        SR_Static = SR;
+
         LightsManager.AllLightsOut += doorProgressCanHappen;
         LightsManager.TurnedBackOneLight += doorProgressIsSuspended;
     }
@@ -36,14 +47,14 @@ public class DoorManager : MonoBehaviour
         /*
          * Here should be a verification that ask wheter or not all lights are off
          * if so, the next question is asked, else the game does nothing.
-         */ 
+         
          if(allLightsOut)
         {
             if (triggerCollider.tag == "DoorProgresion")
             {
                 changeDoorStatus(triggerCollider.gameObject);
             }
-        }
+        }*/
     }
 
     private void doorProgressCanHappen()
@@ -61,27 +72,30 @@ public class DoorManager : MonoBehaviour
     /// <summary>
     /// Changes the srpites that indicates the status of the door as well as changes the int that helps to identify the current status of the door
     /// </summary>
-    private void changeDoorStatus(GameObject triggerColliderGO)
+    public static void changeDoorStatus(GameObject triggerColliderGO)
     {
-        if(currentStatus==0)
+        if (allLightsOut)
         {
-            Debug.Log("status primero");
-            doorSprite.SetActive(false);
-            firstRupture.SetActive(true);
+            if (currentStatus == 0)
+            {
+                Debug.Log("status primero");
+
+                SR_Static.sprite = firstSatateStatic;
+            }
+            else if (currentStatus == 1)
+            {
+                Debug.Log("status segundo");
+
+                SR_Static.sprite = secondSatateStatic;
+            }
+            else if (currentStatus == 2)
+            {
+                Debug.Log("status tercero");
+
+                SR_Static.sprite = finalStateStatic;
+            }
+            triggerColliderGO.SetActive(false);
+            currentStatus++;
         }
-        else if(currentStatus==1)
-        {
-            Debug.Log("status segundo");
-            firstRupture.SetActive(false);
-            advancedRupture.SetActive(true);
-        }
-        else if(currentStatus==2)
-        {
-            Debug.Log("status tercero");
-            advancedRupture.SetActive(false);
-            brokenDoor.SetActive(true);
-        }
-        triggerColliderGO.SetActive(false);
-        currentStatus++;
     }
 }
