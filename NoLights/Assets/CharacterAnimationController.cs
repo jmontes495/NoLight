@@ -6,6 +6,8 @@ public class CharacterAnimationController : MonoBehaviour
 {
     private Animator animator;
 
+    private float animDelay = 0.1f;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -20,12 +22,23 @@ public class CharacterAnimationController : MonoBehaviour
 
     private IEnumerator Walking()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        WaitForSeconds delay = new WaitForSeconds(animDelay);
 
-        animator.SetInteger("Vertical", (int) moveVertical*10);
-        animator.SetInteger("Horizontal", (int) moveHorizontal*10);
-        yield return new WaitForEndOfFrame();
+        while (true)
+        {
+            int moveVertical = Input.GetKey(KeyCode.DownArrow) ? -1 : 0;
+            int moveHorizontal = Input.GetKey(KeyCode.LeftArrow) ? -1 : 0;
+
+            moveVertical = Input.GetKey(KeyCode.UpArrow) ? 1 : moveVertical;
+            moveHorizontal = Input.GetKey(KeyCode.RightArrow) ? 1 : moveHorizontal;
+
+            if (moveHorizontal != 0)
+                moveVertical = 0;
+
+            animator.SetInteger("Vertical", moveVertical);
+            animator.SetInteger("Horizontal", moveHorizontal);
+            yield return delay;
+        }
 
     }
 }
