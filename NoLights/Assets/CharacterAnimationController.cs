@@ -20,6 +20,8 @@ public class CharacterAnimationController : MonoBehaviour
     private void StopWalking()
     {
         StopAllCoroutines();
+        CharacterSoundManager.StopWalkingSound();
+        isPlayingSound = false;
     }
 
     private IEnumerator Walking()
