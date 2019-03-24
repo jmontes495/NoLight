@@ -28,6 +28,7 @@ public class DialogManager : MonoBehaviour
 
     private void DisappearInitialDialog()
     {
+        StopAllCoroutines();
         LightBehaviour.LightOn -= DisappearInitialDialog;
         LightBehaviour.LightOff -= DisappearInitialDialog;
         StartCoroutine(FadeOut());
@@ -39,7 +40,6 @@ public class DialogManager : MonoBehaviour
         dialog.text = finalText;
         dialog.color = new Color(0f, 1f, 1f, 0f);
         LightsManager.AllLightsOut -= ShowFinalDialog;
-        StopAllCoroutines();
         StartCoroutine(FadeInAndGlow());
     }
 
