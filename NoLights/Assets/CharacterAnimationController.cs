@@ -8,6 +8,8 @@ public class CharacterAnimationController : MonoBehaviour
 
     private float animDelay = 0.1f;
 
+    private bool isPlayingSound;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -23,6 +25,7 @@ public class CharacterAnimationController : MonoBehaviour
     private IEnumerator Walking()
     {
         WaitForSeconds delay = new WaitForSeconds(animDelay);
+        yield return delay;
 
         while (true)
         {
@@ -35,10 +38,16 @@ public class CharacterAnimationController : MonoBehaviour
             if (moveHorizontal != 0)
                 moveVertical = 0;
 
-            if (moveHorizontal != 0 || moveVertical != 0)
+            if ((moveHorizontal != 0 || moveVertical != 0) && !isPlayingSound)
+            {
                 CharacterSoundManager.PlayWalkingSound();
-            else
+                isPlayingSound = true;
+            }
+            else if ((moveHorizontal == 0 && moveVertical == 0) && isPlayingSound)
+            {
                 CharacterSoundManager.StopWalkingSound();
+                isPlayingSound = false;
+            }
 
             animator.SetInteger("Vertical", moveVertical);
             animator.SetInteger("Horizontal", moveHorizontal);
