@@ -13,6 +13,8 @@ public class LightBehaviour : MonoBehaviour
 
     private Light torchLight;
 
+    
+
     private bool canActivate = true;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,8 @@ public class LightBehaviour : MonoBehaviour
         torchLight.enabled = !torchLight.enabled;
         torchOn.enabled = torchLight.enabled;
         NotifyLightState();
+
+        torchSounds();
     }
 
     private void NotifyLightState()
@@ -43,5 +47,10 @@ public class LightBehaviour : MonoBehaviour
             LightOn();
         else
             LightOff();
+    }
+
+    private void torchSounds()
+    {
+        LightSoundManager.PlayLightsSounds(torchLight.enabled);
     }
 }
