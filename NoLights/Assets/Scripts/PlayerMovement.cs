@@ -31,14 +31,11 @@ public class PlayerMovement : MonoBehaviour {
     private void StopWalking()
     {
         StopAllCoroutines();
-        CharacterSoundManager.StopWalkingSound();
     }
 
     private IEnumerator Walking()
     {
-        WaitForSeconds delay = new WaitForSeconds(movementDelay);
-
-        
+        WaitForSeconds delay = new WaitForSeconds(movementDelay);        
 
         while (true)
         {
@@ -50,22 +47,18 @@ public class PlayerMovement : MonoBehaviour {
             if (moveHorizontal < 0)
             {
                 movement.x = -tileDistance;
-                CharacterSoundManager.PlayWalkingSound();
             }
             else if (moveHorizontal > 0)
             {
                 movement.x = tileDistance;
-                CharacterSoundManager.PlayWalkingSound();
             }
             else if (moveVertical > 0)
             {
                 movement.y = tileDistance;
-                CharacterSoundManager.PlayWalkingSound();
             }
             else if (moveVertical < 0)
             {
                 movement.y = -tileDistance;
-                CharacterSoundManager.PlayWalkingSound();
             }
 
             rb.MovePosition(movement + transform.position);

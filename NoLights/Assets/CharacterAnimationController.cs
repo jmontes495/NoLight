@@ -35,6 +35,11 @@ public class CharacterAnimationController : MonoBehaviour
             if (moveHorizontal != 0)
                 moveVertical = 0;
 
+            if (moveHorizontal != 0 || moveVertical != 0)
+                CharacterSoundManager.PlayWalkingSound();
+            else
+                CharacterSoundManager.StopWalkingSound();
+
             animator.SetInteger("Vertical", moveVertical);
             animator.SetInteger("Horizontal", moveHorizontal);
             yield return delay;
