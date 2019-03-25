@@ -5,10 +5,12 @@ using UnityEngine;
 public class DoorSoundsManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioSource glowAudioSource;
     public AudioClip normalBreakSound;
     public AudioClip finalBreakSound;
 
     static AudioSource sAudioSource;
+    static AudioSource sGlowAudioSource;
     static AudioClip sNormalBreakSound;
     static AudioClip sFinalBreakSound;
 
@@ -16,6 +18,7 @@ public class DoorSoundsManager : MonoBehaviour
     void Start()
     {
         sAudioSource = audioSource;
+        sGlowAudioSource = glowAudioSource;
         sNormalBreakSound = normalBreakSound;
         sFinalBreakSound = finalBreakSound;
     }
@@ -25,6 +28,7 @@ public class DoorSoundsManager : MonoBehaviour
         if(doorStatus == 3)
         {
             sAudioSource.clip = sFinalBreakSound;
+            sGlowAudioSource.Play();
         }
         else
         {

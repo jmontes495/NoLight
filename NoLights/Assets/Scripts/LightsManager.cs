@@ -38,7 +38,7 @@ public class LightsManager : MonoBehaviour
         { 
             AllLightsOut();
             AmbienceSoundManager.changeAmbienceSounds();
-            GlowSoundManager.PlayGlowSound();
+            //GlowSoundManager.PlayGlowSound();
         }
     }
 }

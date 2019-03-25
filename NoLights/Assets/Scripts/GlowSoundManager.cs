@@ -17,9 +17,9 @@ public class GlowSoundManager : MonoBehaviour
         sGlowSound = glowSound;
     }
 
-    public static void PlayGlowSound()
+    /*public static void PlayGlowSound()
     {
         sAudioSource.clip = sGlowSound;
         sAudioSource.Play();
-    }
+    }*/
 }
